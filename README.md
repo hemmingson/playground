@@ -1,10 +1,10 @@
-🔸 `esc` es5.from main
+`/esc`
 
 ```
 npm start
 ```
 
-🔹  `_` react.h5
+`_.html`
 
 ```
 
