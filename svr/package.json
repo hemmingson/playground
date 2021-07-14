@@ -1,0 +1,13 @@
+{
+  "name": "svr",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@hapi/hapi": "*",
+    "@hapi/inert": "*",
+    "dotenv": "*"
+  }
+}
