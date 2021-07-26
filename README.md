@@ -8,6 +8,12 @@
 npm start
 ```
 
+`/jdd`
+
+```
+npm t
+```
+
 `/svr`
 
 ```
