@@ -1,0 +1,8 @@
+{
+  "name": "b",
+  "version": "1.0.0",
+  "main": "input.js",
+  "scripts": {
+    "start": "node --print-bytecode --print-bytecode-filter=input input"
+  }
+}
