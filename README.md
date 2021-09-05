@@ -20,6 +20,12 @@ npm start
 npm t
 ```
 
+`/outfit`
+
+```
+yarn dev
+```
+
 `/svr`
 
 ```
