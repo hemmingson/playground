@@ -1,4 +1,4 @@
-import { useCallback, useMemo } from 'preact/hooks'
+import { useMemo } from 'preact/hooks'
 
 const css = {
   width: 150,
@@ -10,14 +10,10 @@ const css = {
 const reg = /\bhttps?:\/\/(?:www.|ww2.)?((?:[\w-]+.){1,}\w+)\b/
 
 const Item = ({ title, href }) => {
-  const handleClick = useCallback(() => {
-    console.log(href)
-  }, [])
-
   const domain = useMemo(() => reg.exec(href)[1], [href])
 
   return (
-    <div style={css} onClick={handleClick}>
+    <div style={css}>
       <span>{title}</span>
       <a href={href} target="_blank" rel="noopener noreferrer">
         {domain}
