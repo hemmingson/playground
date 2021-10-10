@@ -23,7 +23,19 @@ npm t
 `/outfit`
 
 ```
-yarn dev
+npm run dev
+```
+
+`/r$`
+
+```
+npm run dev
+```
+
+`/ssr`
+
+```
+npm run dev
 ```
 
 `/svr`
