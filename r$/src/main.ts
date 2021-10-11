@@ -1,9 +1,11 @@
 // create
-import { fromEvent } from 'rxjs'
+import { fromEvent, from, of } from 'rxjs'
 // control flow
 import { throttleTime, scan } from 'rxjs/operators'
 // transform value
 import { map } from 'rxjs/operators'
+// combine
+import { forkJoin } from 'rxjs'
 
 import './style.css'
 
@@ -41,3 +43,18 @@ const click$ = fromEvent<MouseEvent>(el, 'click').pipe(
 click$.subscribe((count) => {
   counter.textContent = count + ''
 })
+
+const promise$ = from(new Promise((resolve) => resolve('hem')))
+
+promise$.subscribe((res) => console.log(res))
+
+const obj$ = of({ lang: 'typescript' })
+
+obj$.subscribe((res) => console.log(res.lang))
+
+const h1 = fetch('https://jsonplaceholder.typicode.com/todos/1')
+const h2 = fetch('https://jsonplaceholder.typicode.com/todos/2')
+
+const all$ = forkJoin([h1, h2]).pipe(map(([r1, r2]) => [r1.json(), r2.json()]))
+
+all$.subscribe(([d1, d2]) => console.log(d1, d2))
