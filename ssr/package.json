@@ -32,9 +32,5 @@
     "lint-staged": "^11.2.1",
     "prettier": "^2.4.1",
     "prisma": "^3.1.1"
-  },
-  "lint-staged": {
-    "*.ts?(x)": "eslint --cache --fix",
-    "*.{js,ts,css,md}": "prettier --write"
   }
 }

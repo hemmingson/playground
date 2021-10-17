@@ -1,9 +1,11 @@
 import { PrismaClient } from '@prisma/client'
 
-const isProd = process.env.NODE_ENV === 'production'
+const prisma =
+  global.prisma ||
+  new PrismaClient({
+    log: ['query'],
+  })
 
-if (!global.prisma) global.prisma = new PrismaClient()
-
-const prisma = isProd ? new PrismaClient() : global.prisma
+if (process.env.NODE_ENV !== 'production') global.prisma = prisma
 
 export default prisma
