@@ -55,6 +55,8 @@ obj$.subscribe((res) => console.log(res.lang))
 const h1 = fetch('https://jsonplaceholder.typicode.com/todos/1')
 const h2 = fetch('https://jsonplaceholder.typicode.com/todos/2')
 
-const all$ = forkJoin([h1, h2]).pipe(map(([r1, r2]) => [r1.json(), r2.json()]))
+const all$ = forkJoin([h1, h2]).pipe(
+  map(([r1, r2]) => ({ first: r1, second: r2 }))
+)
 
-all$.subscribe(([d1, d2]) => console.log(d1, d2))
+all$.subscribe((o) => console.log(o.first, o.second))
