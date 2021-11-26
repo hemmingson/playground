@@ -32,6 +32,12 @@ npm run dev
 npm run dev
 ```
 
+`/remix`
+
+```
+npm run dev
+```
+
 `/ssr`
 
 ```
